@@ -250,3 +250,9 @@ input[type="submit"]:disabled {
    font-weight: bold;
    border: 1px;
 }
+
+@media screen and (max-width: 600px) {
+  .button {
+    width:220px;
+  }
+}
