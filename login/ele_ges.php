@@ -430,13 +430,11 @@ if ($cambiamentopassword)
 }
 else
 {
-    print "<table border=1 width=100%>
-					<tr class='prima'>
-						<td width='33%'><center>MENU</center></td>
-						<td width='67%'><center>AVVISI</center></td>
-				  </tr>
-				  <tr>";
-    print "<td align='center' valign='top'>";
+    print "<div class='container'>
+					<div class='row justify-content-md-center'>
+						<div class='col-md-auto'><div class='prima'>MENU</div>
+				  <div class='row justify-content-md-center'>";
+    print "<div class='col-md-auto'>";
     menu_open();
 
 
@@ -1519,7 +1517,7 @@ else
 
     menu_close();
 
-    print "</td>";
+    print "</div></div></div>";
 
     /*
      * GESTIONE AVVISI
@@ -1537,7 +1535,7 @@ else
         $dataoggi = date('Y-m-d');
 
 
-        print ("<td valign=top>");
+        print ("<div class='col-md-auto'><div class='prima'>AVVISI</div><div class='row justify-content-md-center'><div class='col-md-auto'>");
 
         /*            if ($tipoutente == 'S')
           {
@@ -1557,8 +1555,8 @@ else
         {
             if ($tipoutente == 'S' | $tipoutente == 'P')
             {
-                $query = "SELECT DISTINCT * FROM tbl_assemblee 
-				  WHERE (autorizzato=0) 
+                $query = "SELECT DISTINCT * FROM tbl_assemblee
+				  WHERE (autorizzato=0)
 				  AND ((docenteconcedente1!=0 AND concesso1=1) AND (docenteconcedente2=0) OR (docenteconcedente2!=0 AND concesso2=1))";
                 $ris = mysqli_query($con, inspref($query)) or die("Errore nella query: " . mysqli_error($con) . inspref($query));
                 if (mysqli_num_rows($ris) > 0)
@@ -1571,7 +1569,7 @@ else
             //VERIFICO PRESENZA RICHIESTE DI ASSEMBLEE DI CLASSE
             if ($tipoutente == 'D' | $tipoutente == 'S')
             {
-                $query = "SELECT * FROM tbl_assemblee 
+                $query = "SELECT * FROM tbl_assemblee
 		  WHERE ((docenteconcedente1=$idutente AND concesso1=0)
                         OR (docenteconcedente2=$idutente AND concesso2=0))
                         AND (rappresentante1<>0 and rappresentante2<>0)";
@@ -1713,12 +1711,12 @@ else
             print (html_entity_decode($testo, ENT_QUOTES, 'UTF-8') . "<br/><br/><br/>");
         }
 
-        print ("</td></tr></table>");
+        print ("</div></div></div>");
     }
     else  // ADMIN e PRESIDE
     {
         $dataoggi = date('Y-m-d');
-        print ("<td valign=top>");
+        print ("<div class='col-md-auto'>");
         if ($tipoutente == 'M')
         {
             //
@@ -1777,7 +1775,7 @@ else
         }
 
 
-        print("</td></tr></table>");
+        print("</div>");
     }
 } // Fine else cambiamento password
 
