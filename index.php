@@ -82,6 +82,17 @@ if ($suffisso != "*")
 print "<!DOCTYPE html>
 <html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta name='mobile-web-app-capable' content='yes'>
+<link rel='icon' sizes='192x192' href='./LampSchool-4x.png'>
+<link rel='stylesheet' type='text/css' href='css/addtohomescreen.css'>
+<script src='addtohomescreen/addtohomescreen.min.js'></script>
+      <script>
+        localStorage.clear();
+        var addtohome = addToHomescreen({
+           autostart: false
+        });
+      addtohome.show();
+      </script>
 <title>Inserimento dati di accesso</title>
 </head><body>";
 print "<center><big><big>Seleziona scuola - anno</big></big></center><br><br>";
@@ -100,7 +111,7 @@ for ($i = 0; $i < count($scuole); $i++)
 
 print "</table>";
 print "</body></html>";
-//	
+//
 
 
 function elencafiles($dirname)
@@ -123,6 +134,3 @@ function elencafiles($dirname)
     sort($arrayfiles);
     return $arrayfiles;
 }
-
-
-
