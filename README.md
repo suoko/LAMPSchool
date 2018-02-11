@@ -1,2 +1,1 @@
 # LAMPSchool
-# LAMPSchool
