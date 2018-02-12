@@ -432,7 +432,7 @@ else
 {
     print "<div class='container'>
 					<div class='row justify-content-md-center'>
-						<div class='col-md-auto'><div class='prima'>MENU</div>
+						<div class='col-md-6'><div class='prima'>MENU</div>
 				  <div class='row justify-content-md-center'>";
     print "<div class='col-md-auto'>";
     menu_open();
@@ -1535,7 +1535,7 @@ else
         $dataoggi = date('Y-m-d');
 
 
-        print ("<div class='col-md-auto'><div class='prima'>AVVISI</div><div class='row justify-content-md-center'><div class='col-md-auto'>");
+        print ("<div class='col-md-6'><div class='prima'>AVVISI</div><div class='row justify-content-md-center'><div class='col-md-auto'>");
 
         /*            if ($tipoutente == 'S')
           {
