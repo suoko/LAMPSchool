@@ -1,0 +1,5 @@
+cd ~/dev/notifications/pwa-api
+node server.js &&
+
+cd ~/dev/notifications/pwa/public
+http-server &&
